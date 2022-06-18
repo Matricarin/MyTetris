@@ -9,18 +9,14 @@ namespace MyTetris
             Console.WriteLine("Work with GitHub!");
             Console.SetWindowSize(50, 40);
             Console.SetBufferSize(50, 40);
-            int x1 = 5;
-            int y1 = 10;
-            char c1 = '#';
+            
+            Point p1 = new Point();
+            p1.X = 5;
+            p1.Y = 10;
+            p1.Sym = '#';
+            p1.Draw();
 
-            Draw(x1, y1, c1);
             Console.ReadKey();
-        }
-
-        static void Draw(int x, int y, char c)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(c);
-        }
+        }               
     }
 }
