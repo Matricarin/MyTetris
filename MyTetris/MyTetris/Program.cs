@@ -16,6 +16,16 @@ namespace MyTetris
             p1.Sym = '#';
             p1.Draw();
 
+            Point p2 = new Point(3, 9, '#');
+            p2.Draw();
+            Point p3 = new Point()
+            {
+                X = 5,
+                Y = 8,
+                Sym = '#'
+            };
+            p3.Draw();
+
             Console.ReadKey();
         }               
     }
