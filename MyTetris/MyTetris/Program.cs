@@ -10,22 +10,17 @@ namespace MyTetris
             Console.WriteLine("Work with GitHub!");
             Console.SetWindowSize(50, 40);
             Console.SetBufferSize(50, 40);
-            Figure s = new Square(25, 20, '#');
+            Figure s = new Stick (25, 20, '#');
             s.Draw();
 
             Thread.Sleep(500);
             s.Hide();
-            s.Move(Direction.Left);
+            s.Rotate();
             s.Draw();
 
             Thread.Sleep(500);
             s.Hide();
-            s.Move(Direction.Right);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.Down);
+            s.Rotate();
             s.Draw();
 
             Console.ReadKey();
