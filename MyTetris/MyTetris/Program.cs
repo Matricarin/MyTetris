@@ -28,6 +28,18 @@ namespace MyTetris
             Stick st1 = new Stick(14, 6, '#');
             st1.Draw();
 
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Start Figure: ");
+            Figure[] farr = new Figure[2];
+            farr[0] = new Square(14, 11, '@');
+            farr[1] = new Stick(25, 11, '@');
+            foreach (Figure f in farr)
+            {
+                f.Draw();
+            }
+
             Console.ReadKey();
         }               
     }
