@@ -18,6 +18,22 @@ namespace MyTetris
            }                   
         }
 
+        public void Hide()
+        {
+            foreach (Point p in points)
+            {
+                p.Hide();
+            }
+        }
+
+        public void Move(Direction dir)
+        {
+            foreach (Point p in points)
+            {
+                p.Move(dir);
+            }
+        }
+
 
     }
 }

@@ -24,5 +24,27 @@ namespace MyTetris
             this.Y = y;
             this.Sym = c;
         }
+
+        internal void Hide()
+        {
+            Console.SetCursorPosition(X, Y);
+            Console.Write(" ");
+        }
+
+        internal void Move(Direction dir)
+        {
+            switch (dir)
+            {
+                case Direction.Left:
+                    X--;
+                    break;
+                case Direction.Right:
+                    X++;
+                    break;
+                case Direction.Down:
+                    Y++;
+                    break;
+            }
+        }
     }
 }

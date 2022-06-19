@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace MyTetris
 {
@@ -9,36 +10,23 @@ namespace MyTetris
             Console.WriteLine("Work with GitHub!");
             Console.SetWindowSize(50, 40);
             Console.SetBufferSize(50, 40);
+            Figure s = new Square(25, 20, '#');
+            s.Draw();
 
-            Console.WriteLine("Start Point: ");
-            Point p1 = new Point(14, 1, '#');
-            p1.Draw();
+            Thread.Sleep(500);
+            s.Hide();
+            s.Move(Direction.Left);
+            s.Draw();
 
-            Console.WriteLine();
-            Console.WriteLine();
+            Thread.Sleep(500);
+            s.Hide();
+            s.Move(Direction.Right);
+            s.Draw();
 
-            Console.WriteLine("Start Square: ");
-            Square s1 = new Square(14, 3, '#');
-            s1.Draw();
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Console.WriteLine("Start Stick: ");
-            Stick st1 = new Stick(14, 6, '#');
-            st1.Draw();
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Console.WriteLine("Start Figure: ");
-            Figure[] farr = new Figure[2];
-            farr[0] = new Square(14, 11, '@');
-            farr[1] = new Stick(25, 11, '@');
-            foreach (Figure f in farr)
-            {
-                f.Draw();
-            }
+            Thread.Sleep(500);
+            s.Hide();
+            s.Move(Direction.Down);
+            s.Draw();
 
             Console.ReadKey();
         }               
