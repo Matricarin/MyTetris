@@ -11,25 +11,34 @@ namespace MyTetris
             Console.SetWindowSize(50, 40);
             Console.SetBufferSize(50, 40);
             FigureGenerator generator = new FigureGenerator(25, 0, '#');
-            Figure s = null;
+            Figure currentFigure = generator.GetNewFigure();
             while (true)
             {
-                
-                FigureFall(out s, generator);
-                s.Draw();
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    HandleKey(currentFigure, key);
+                }
             }
             Console.ReadKey();
         }
-        static void FigureFall(out Figure fig, FigureGenerator generator)
+
+        private static void HandleKey(Figure currentFigure, ConsoleKeyInfo key)
         {
-            fig = generator.GetNewFigure();
-            fig.Draw();
-            for (int i = 0; i < 15; i++)
+            switch (key.Key)
             {
-                Thread.Sleep(200);
-                fig.Hide();
-                fig.Move(Direction.Down);
-                fig.Draw();
+                case ConsoleKey.LeftArrow:
+                    currentFigure.Move(Direction.Left);
+                    break;
+                case ConsoleKey.RightArrow:
+                    currentFigure.Move(Direction.Right);
+                    break;
+                case ConsoleKey.DownArrow:
+                    currentFigure.Move(Direction.Down);
+                    break;
+                
+                default:
+                    break;
             }
         }
     }
