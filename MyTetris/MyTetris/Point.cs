@@ -16,6 +16,7 @@ namespace MyTetris
         {
             Console.SetCursorPosition(X, Y);
             Console.Write(Sym);
+            Console.SetCursorPosition(0, 0);
         }
         public Point() { }
         public Point(int x, int y, char c)
@@ -23,6 +24,12 @@ namespace MyTetris
             this.X = x;
             this.Y = y;
             this.Sym = c;
+        }
+        public Point (Point p)
+        {
+            this.X = p.X;
+            this.Y = p.Y;
+            this.Sym = p.Sym;
         }
 
         internal void Hide()

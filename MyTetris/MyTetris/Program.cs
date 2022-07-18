@@ -8,8 +8,8 @@ namespace MyTetris
         static void Main(string[] args)
         {
             Console.WriteLine("Work with GitHub!");
-            Console.SetWindowSize(50, 40);
-            Console.SetBufferSize(50, 40);
+            Console.SetWindowSize(Field.WIDTH, Field.HEIGHT);
+            Console.SetBufferSize(Field.WIDTH, Field.HEIGHT);
             FigureGenerator generator = new FigureGenerator(25, 0, '#');
             Figure currentFigure = generator.GetNewFigure();
             while (true)
@@ -28,15 +28,18 @@ namespace MyTetris
             switch (key.Key)
             {
                 case ConsoleKey.LeftArrow:
-                    currentFigure.Move(Direction.Left);
+                    currentFigure.TryMove(Direction.Left);
                     break;
                 case ConsoleKey.RightArrow:
-                    currentFigure.Move(Direction.Right);
+                    currentFigure.TryMove(Direction.Right);
                     break;
                 case ConsoleKey.DownArrow:
-                    currentFigure.Move(Direction.Down);
+                    currentFigure.TryMove(Direction.Down);
                     break;
-                
+                case ConsoleKey.Spacebar:
+                    currentFigure.TryRotate();                   
+                    break;
+
                 default:
                     break;
             }
