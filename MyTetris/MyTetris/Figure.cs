@@ -39,15 +39,6 @@ namespace MyTetris
             Draw();
         }
 
-        //public void Move(Direction dir)
-        //{
-        //    Hide();
-        //    foreach (Point p in points)
-        //    {
-        //        p.Move(dir);
-        //    }
-        //    Draw();
-        //}
         public void Move(Point[] pList, Direction dir)
         {
             foreach (var p in pList)
@@ -70,7 +61,7 @@ namespace MyTetris
         {
             foreach (var p in pList)
             {
-                if (p.X < 0 || p.Y < 0 || p.X >= 50 || p.Y >= 30)
+                if (p.X < 0 || p.Y < 0 || p.X >= Field.Width || p.Y >= Field.Height)
                     return false;
             }
             return true;

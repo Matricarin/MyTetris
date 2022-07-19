@@ -7,9 +7,9 @@ namespace MyTetris
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Work with GitHub!");
-            Console.SetWindowSize(Field.WIDTH, Field.HEIGHT);
-            Console.SetBufferSize(Field.WIDTH, Field.HEIGHT);
+            Console.WriteLine("Welcome to the Tetris!");
+            Field.Width = 100;
+            Field.Height = 100;
             FigureGenerator generator = new FigureGenerator(25, 0, '#');
             Figure currentFigure = generator.GetNewFigure();
             while (true)
