@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyTetris
 {
-    public enum Direction
+    public enum Result
     {
-        Left,
-        Right,
-        Down,
-        Up
+        SUCCEESS, DOWN_BORDER_STRIKE, BORDER_STRIKE, HEAP_STRIKE
     }
 }
